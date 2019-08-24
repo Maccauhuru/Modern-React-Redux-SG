@@ -1,5 +1,7 @@
 import React from "react";
 import SeasonDisplay from "./SeasonDisplay";
+import Loader from './Loader';
+import "./style.css";
 class App extends React.Component {
   state = {
     latitude: null,
@@ -24,12 +26,18 @@ class App extends React.Component {
 
   render() {
     if (!this.state.errorMessage && this.state.latitude) {
-      return <div><SeasonDisplay latitude={this.state.latitude}/></div>;
+      return (
+        <div>
+          <SeasonDisplay latitude={this.state.latitude} />
+        </div>
+      );
     }
     if (this.state.errorMessage && !this.state.latitude) {
       return <div>Error : {this.state.errorMessage}</div>;
+    } else {
+        return <Loader />
     }
-    return <div>Loading ....</div>;
+
   }
 }
 
