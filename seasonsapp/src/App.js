@@ -24,20 +24,23 @@ class App extends React.Component {
     console.log("component was updated & has re-rendered");
   }
 
-  render() {
+  renderContent () {
     if (!this.state.errorMessage && this.state.latitude) {
       return (
-        <div>
-          <SeasonDisplay latitude={this.state.latitude} />
-        </div>
+          <div>
+            <SeasonDisplay latitude={this.state.latitude} />
+          </div>
       );
     }
     if (this.state.errorMessage && !this.state.latitude) {
       return <div>Error : {this.state.errorMessage}</div>;
     } else {
-        return <Loader />
+      return <Loader  />
     }
+  }
 
+  render() {
+ return (<div>{this.renderContent()}</div>)
   }
 }
 
