@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
-const  root =  document.querySelector('#root');
-ReactDOM.render(<App msg={'Hello World'}/>,root);
+const root = document.querySelector('#root');
+ReactDOM.render(<App />, root);

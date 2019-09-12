@@ -9,9 +9,8 @@ class searchBar extends Component {
     onFormSubmit = (e) => {
         e.preventDefault(e);
         this.props.onSubmit(this.state.searchTerm)
+        this.setState({ searchTerm: '' })
     };
-
-
     render() {
         return (
             <div className={'ui segment'}>
