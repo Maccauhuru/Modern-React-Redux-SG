@@ -1,18 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const showBtnText = {text : 'Click Me!!!'};
-const style = {backgroundColor:'blue',color:'white',fontSize:'18px'}
-
 const App = () =>{
+    const btnText = () => "Self Destruct";
+    const style = {background:'blue',color:'white',fontSize:'18px',border:'1px solid red'}
     return(
         <div>
-            <label htmlFor="name" className="label">Enter Name</label>
-            <input id="name" type="text"/>
-            <button style={style}>{showBtnText.text}</button>
+            <label className="labelcss" htmlFor="fname"></label>
+            Name : <input name="fname" type="text"/>
+            <label className="labelcss" htmlFor="age"></label>
+            Age : <input name="age" type="number"/>
+            <br /><br />
+                <button style={style}>{btnText()}</button>
         </div>
-    )
-}
-
+    );
+};
 
 ReactDOM.render(<App />,document.querySelector('#root'))
