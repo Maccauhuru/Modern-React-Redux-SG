@@ -7,7 +7,7 @@ const Loader = (props) => {
             </div>
         )
 
-}
+};
 
 Loader.defaultProps = {
     message : 'Choose location...'

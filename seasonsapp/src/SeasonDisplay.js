@@ -1,4 +1,5 @@
 import React from "react";
+import './style.css';
 
 const seasonConfig = {
     summer : {
@@ -9,15 +10,15 @@ const seasonConfig = {
         text : 'It is chilly',
         iconName: 'snowflake'
     }
-}
+};
 
 const determineSeason = (lat, month) => {
   return month > 2 && month < 9 && lat > 0 ? "summer" : "winter";
 };
 
 const SeasonDisplay = props => {
-  const season = determineSeason(props.latitude, new Date().getMonth());
-  const { text , iconName } = seasonConfig[season]
+  const season = determineSeason(props.lat, new Date().getMonth());
+  const { text , iconName } = seasonConfig[season];
 
     return <div className={`season-display ${season}`}>
         <i className={`${iconName} icon massive left`} />
